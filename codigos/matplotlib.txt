@@ -1,0 +1,87 @@
+# Ejemplo de posicionamiento distinto de gráficos
+
+import matplotlib.pyplot as plt
+
+ 
+
+### figura
+
+fig1 = plt.figure(dpi = 200)
+
+### subgráfico 1
+
+ax1 = fig1.add_subplot(2,1,1) #1 fila, 2 columna y 1 (sub)gráfico 1. Puede tener 2 (sub)gráficos
+
+ax1.plot([1,2,3,4], [1,4,9,16], 'o--', color="orchid", markerfacecolor="lightgreen")
+
+ax1.axis([0,6,0,20])
+
+ 
+
+### subgrafico 2
+
+ax2 = fig1.add_subplot(2,2,3) #1 fila, 2 columnas (debe ser igual que lo de arriba) y (sub)gráfico 2.
+
+ax2.plot([1,2,3,4], [1,2,3,4], 'v-', color="skyblue", markerfacecolor="magenta", linewidth=3)
+
+ax2.axis([0,6,0,10])
+
+### subgráfico 3
+
+ax3 = fig1.add_subplot(2,2,4)
+
+ax3.plot([1,2,3,4], [2,4,6,8], 'D-.', color="cyan", markerfacecolor="purple", lw=2)
+
+#como estamos trabajando en el segundo subgráfico, ambas curvas van en éste.
+
+ax3.axis([0,6,0,10])
+
+ 
+
+plt.show()
+
+import matplotlib.pyplot as plt
+
+ 
+
+### figura
+
+fig1 = plt.figure(dpi = 100)
+
+### subgráfico 1
+
+ax1 = fig1.add_subplot(1,2,1) #1 fila, 2 columna y 1 (sub)gráfico 1. Puede tener 2 (sub)gráficos
+
+ax1.title.set_text("Subgráfico 1")
+
+ax1.plot([1,2,3,4], [1,4,9,16], 'o--', color="orchid", markerfacecolor="lightgreen")
+
+ax1.set_xlabel("Datos eje x")
+
+ax1.set_ylabel("Datos eje y")
+
+ax1.axis([0,6,0,20])
+
+ 
+
+### subgrafico 2
+
+ax2 = fig1.add_subplot(1,2,2) #1 fila, 2 columnas (debe ser igual que lo de arriba) y (sub)gráfico 2.
+
+ax2.title.set_text("Subgráfico 2")
+
+ax2.set_xlabel("Datos eje x")
+
+ax2.set_ylabel("Datos eje y")
+
+ax2.plot([1,2,3,4], [1,2,3,4], 'v-', color="skyblue", markerfacecolor="magenta", linewidth=3)
+
+ax2.plot([1,2,3,4], [2,4,6,8], 'D-.', color="cyan", markerfacecolor="purple", lw=2)
+
+#como estamos trabajando en el segundo subgráfico, ambas curvas van en éste.
+
+ax2.axis([0,6,0,10])
+
+ 
+
+plt.show()
