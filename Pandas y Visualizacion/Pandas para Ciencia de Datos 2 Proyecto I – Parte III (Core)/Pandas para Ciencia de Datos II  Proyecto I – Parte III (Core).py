@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 #--Carga el archivo CSV en un DataFrame de Pandas.
+
 df = pd.read_csv('data/retail_ferreteria.csv')
 print("df",df)
 print(df.head(10))
@@ -58,6 +59,7 @@ print(desviacion_estandar_ventas)
 
 # Varianza de las ventas por sucursal
 varianza_ventas = df.groupby(['sucursal', 'producto'])['total_venta'].var().round(2)
+
 print(varianza_ventas)
 
 #3.- Análisis Personalizado con apply
